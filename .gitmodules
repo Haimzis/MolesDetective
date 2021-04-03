@@ -1,0 +1,15 @@
+[submodule "LabelMeMaskParser"]
+	path = LabelMeMaskParser
+	url = https://github.com/Haimzis/LabelMeMaskParser.git
+[submodule "Moles_Detective_Data_Backend"]
+	path = Moles_Detective_Data_Backend
+	url = https://github.com/Haimzis/Moles_Detective_Data_Backend.git
+[submodule "Moles_Detective_Deeplab"]
+	path = Moles_Detective_Deeplab
+	url = https://github.com/Haimzis/Moles_Detective_Deeplab.git
+[submodule "Moles_Detective_Server_Backend"]
+	path = Moles_Detective_Server_Backend
+	url = https://github.com/Haimzis/Moles_Detective_Server_Backend.git
+[submodule "Moles_Detective_AndroidApp"]
+	path = Moles_Detective_AndroidApp
+	url = https://github.com/Asaf-Federman/Moles_Detective_AndroidApp
