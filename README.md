@@ -1,4 +1,6 @@
-# MolesDetective
-###End-to-end Computer Vision Project: Recognition and Diagnostics of Skin Lesions, with Mobile.
+# ***Moles Detective - Mobile Application for Skin Lesion Analyze***
+## End to end Computer vision project
+#### ***By Haim Zisman, and Asaf Federman***
 
-###Motivation:
+
+ 
