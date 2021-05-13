@@ -13,7 +13,7 @@
 
 ## Description
 **Moles Detective was developed as a final project of our CS degree**  
-its goal is to analyze skin lesions and even identify the cancers in between,  
+its goal is to analyze skin lesions and even identify cancerous lesions,  
 with personal Mobile devices - by using Deep learning, and some Computer vision methods such as:
 * Semantic Segmentation
 * Classification
@@ -47,7 +47,24 @@ the user can actually see the skin lesion getting lighted in real time, and send
 each one returns value that based on ABCD official rating method - with weighted sum of the calculations, we have an idea for how much this lesion is dangerous.
 
 ### Summary
-**This project hasn't reach is final goal - although many of the predictions contains a good deal of accurate diagnosis in terms of border/asymmetric etc… the application still can't take all the parameters and interpret them into an accurate answer of cancer/noncancer**
+**Achievements**:
+* our asymmetric, border, color, size(pixels per metric) inference has a good accuracy.
+* we reached a significant performance improvement with a self-made annotations for our own task.
+* the main Application for mobile works at ~25 fps on nowadays devices.
+* we developed a great Data backend that successfully generated unlimited augmented Data with templates, and a few annotated masks. 
+* the deeplabV3 project has served us perfectly, and we managed to train/deploy and optimize the trained models that we have created by it.
+* after reading many papers in our problem domain, we managed to implement a satisfying algorithms for our tasks.
+
+etc...
+
+**Would like to achieve**
+* the application still can't take all the parameters and interpret them into an accurate answer of  
+  cancerous/noncancerous, we should find a better balance between the parameters.
+* the classification model isn't accurate enough - more computational power is required.
+* we still have a lack of Data that can use us in our problem domain - Mobile devices.
+a better way to grab data will be a cloud based platform for a much more contributors than we had.
+
+etc...
 
 **Still, it was a great challenge. we succeed many of our sub-goals and learned many things through this project :)**
 
