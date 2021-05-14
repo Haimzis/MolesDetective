@@ -55,6 +55,7 @@ each one returns value that based on ABCD official rating method - with weighted
 * the deeplabV3 project has served us perfectly, and we managed to train/deploy and optimize the trained models that we have created by it.
 * after reading many papers about our problem domain, we managed to implement a satisfying algorithms for our tasks.
 * we managed to develop a friendly user interface, combined with the newest mobile camera API, CameraX(Google) for Android. 
+
 etc...
 
 **Would like to achieve**
