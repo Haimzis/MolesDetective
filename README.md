@@ -53,8 +53,8 @@ each one returns value that based on ABCD official rating method - with weighted
 * the main Application for mobile works at ~25 fps on nowadays devices.
 * we developed a great Data backend that successfully generated unlimited augmented Data with templates, and a few annotated masks. 
 * the deeplabV3 project has served us perfectly, and we managed to train/deploy and optimize the trained models that we have created by it.
-* after reading many papers in our problem domain, we managed to implement a satisfying algorithms for our tasks.
-
+* after reading many papers about our problem domain, we managed to implement a satisfying algorithms for our tasks.
+* we managed to develop a friendly user interface, combined with the newest mobile camera API, CameraX(Google) for Android. 
 etc...
 
 **Would like to achieve**
@@ -64,8 +64,7 @@ etc...
 * we still have a lack of Data that can use us in our problem domain - Mobile devices.
 a better way to grab data will be a cloud based platform for a much more contributors than we had.
 
-etc...
 
-**Still, it was a great challenge. we succeed many of our sub-goals and learned many things through this project :)**
+**it was a great challenge. we succeed many of our sub-goals and learned many things through this project :)**
 
 **We Encourage you to take a look on the mentioned submodules**
