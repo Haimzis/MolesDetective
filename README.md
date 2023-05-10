@@ -1,71 +1,62 @@
-# ***Moles Detective - Mobile Application for Skin Lesion Analyze***
-#### ***End to end computer vision project - By Haim Zisman & Asaf Federman***
+# Moles Detective - Mobile Application for Skin Lesion Analysis
+#### End-to-end computer vision project by Haim Zisman & Asaf Federman
 ***
 
-### **Sub-Projects Components**
-| Component | Link 
-| :---: | :---: | 
-| Annotation tool & Xml Parse | [Submodule Link](https://github.com/Haimzis/LabelMeMaskParser/tree/18b38a83dd2a8ae94e536e2cd7c3c780ae1911b1) |
-| Frontend Android Application | [Submodule Link](https://github.com/Asaf-Federman/Moles_Detective_AndroidApp/tree/f357b83a7fae3707a9c1c298de0b47730621f01e) | |
-| Backend Flask Server | [Submodule Link](https://github.com/Haimzis/Moles_Detective_Server_Backend/tree/b6767f8516781b513f58cab8d8f30fb346c00933) | |
-| Data Augmentation & Preprocess | [Submodule Link](https://github.com/Haimzis/Moles_Detective_Data_Backend/tree/b6d9a407dcacc964f7f4c308c2f1567f4c242cb5) | |
-| Model Training & Deployment (DeeplabV3)  | [Submodule Link](https://github.com/Haimzis/Moles_Detective_Deeplab_MobileNetV3/tree/b7a8f80832ce24d2c80baa1b7a08bc4b5c69af5c) | |
+### Sub-Project Components
+| Component | Link |
+| :---: | :---: |
+| Annotation tool & XML Parse | [Submodule Link](https://github.com/Haimzis/LabelMeMaskParser/tree/18b38a83dd2a8ae94e536e2cd7c3c780ae1911b1) |
+| Frontend Android Application | [Submodule Link](https://github.com/Asaf-Federman/Moles_Detective_AndroidApp/tree/f357b83a7fae3707a9c1c298de0b47730621f01e) |
+| Backend Flask Server | [Submodule Link](https://github.com/Haimzis/Moles_Detective_Server_Backend/tree/b6767f8516781b513f58cab8d8f30fb346c00933) |
+| Data Augmentation & Preprocessing | [Submodule Link](https://github.com/Haimzis/Moles_Detective_Data_Backend/tree/b6d9a407dcacc964f7f4c308c2f1567f4c242cb5) |
+| Model Training & Deployment (DeeplabV3) | [Submodule Link](https://github.com/Haimzis/Moles_Detective_Deeplab_MobileNetV3/tree/b7a8f80832ce24d2c80baa1b7a08bc4b5c69af5c) |
 
 ## Description
-**Moles Detective was developed as a final project of our CS degree**  
-its goal is to analyze skin lesions and even identify cancerous lesions,  
-with personal Mobile devices - by using Deep learning, and some Computer vision methods such as:
+**Moles Detective was developed as our final project for our CS degree.** Its goal is to analyze skin lesions and identify cancerous lesions using deep learning and computer vision methods such as:
 * Semantic Segmentation
 * Classification
-* Color Threshold
+* Color Thresholding
 * Centroid Alignment
-* Hair Removal   
-  etc..
-  
-Each Submodule contains full description of its purpose. 
-  
-### Our approach
-**Data Acquisition**: for Segmentation, we have used ISIC2018 Dataset, it contains ~2500 annotated masks and images of skin lesions + our own annotated Data - from our social, google, etc..   
-for Classification, We have used Data from Kaggle and ISIC2019 + our own augmentation for making this Data relevant to our task. (Mobile Samples)
+* Hair Removal
+  etc.
 
-**Data Preprocess & Augmentation**: We have build our own image preprocess methods, and used OpenCV for state-of-art methods.
-full description can be found in our Data Backend Project.
+Each submodule contains a full description of its purpose.
 
-**Soft-real Inference**: there is a semantic segmentation model on the actual mobile - the performance are ~25fps on nowadays devices.
-the segmentation task itself done by a state-of-art quantized Mobilenet TFlite model.
-the user can actually see the skin lesion getting lighted in real time, and sending them to the server when he sure that the picture is clear and stable.
+### Our Approach
+**Data Acquisition**: For segmentation, we used the ISIC2018 Dataset, which contains approximately 2500 annotated masks and images of skin lesions, along with our own annotated data from various sources. For classification, we used data from Kaggle and ISIC2019, augmenting it to make it relevant to our task (mobile samples).
 
-**Server Inference**: when user sends pictures to the server, additional inference is done by state-of-art MobileNetV3 & InceptionV3 - for more accurate results of classification and segmentation (without resize that may cause important features removal).
+**Data Preprocessing & Augmentation**: We developed our own image preprocessing methods and used OpenCV for state-of-the-art techniques. You can find a full description in our Data Backend Project.
 
-**Final Analyzing**: for each sample in user input, some analyzing methods are running:
-* Color Analyzing - seeking for a suspicious colors in a given ranges of color.
-* Border irregularity - checks the smoothing in the border of the lesion.
-* Size - there are 2 version of tasks, one is based on dpi (not so accurate as we want to ), the second is based on pixel-per-metric. 
-* asymmetric
-* classification - prediction of our InceptionV3 Model, trained on many cancerous classes and Noncancerous examples.
+**Soft-RT Inference**: The mobile application includes a semantic segmentation model that achieves a performance of approximately 25 frames per second on modern devices. The segmentation task is performed by a state-of-the-art quantized Mobilenet TFlite model. Users can see the skin lesion being highlighted in real time and send the images to the server when they are confident that the picture is clear and stable.
 
-each one returns value that based on ABCD official rating method - with weighted sum of the calculations, we have an idea for how much this lesion is dangerous.
+**Server Inference**: When users send pictures to the server, additional inference is performed using state-of-the-art MobileNetV3 and InceptionV3 models to obtain more accurate results for classification and segmentation without resizing that may remove important features.
+
+**Final Analysis**: For each sample in the user input, several analysis methods are executed:
+* Color Analysis: Seeking suspicious colors within given color ranges.
+* Border Irregularity: Checking the smoothness of the lesion border.
+* Size: Two versions of the task are available, one based on dpi (less accurate) and the other based on pixels per metric.
+* Asymmetry
+* Classification: Prediction using our InceptionV3 model trained on various cancerous classes and noncancerous examples.
+
+Each analysis returns a value based on the ABCD official rating method. By calculating a weighted sum of these values, we can determine the level of danger associated with the lesion.
 
 ### Summary
 **Achievements**:
-* our asymmetric, border, color, size(pixels per metric) inference has a good accuracy.
-* we reached a significant performance improvement with a self-made annotations for our own task.
-* the main Application for mobile works at ~25 fps on nowadays devices.
-* we developed a great Data backend that successfully generated unlimited augmented Data with templates, and a few annotated masks. 
-* the deeplabV3 project has served us perfectly, and we managed to train/deploy and optimize the trained models that we have created by it.
-* after reading many papers about our problem domain, we managed to implement a satisfying algorithms for our tasks.
-* we managed to develop a friendly user interface, combined with the newest mobile camera API, CameraX(Google) for Android. 
+* Our inference for asymmetry, border irregularity, color analysis, and size (pixels per metric) has shown good accuracy.
+* We achieved significant performance improvements by creating our own annotations for our specific task.
+* The main mobile application works at approximately 25 frames per second on modern devices.
+* We developed a powerful data backend that successfully generated unlimited augmented data using templates and a few annotated masks.
+* The DeeplabV3 project served us perfectly, allowing us to train, deploy, and optimize our models.
+* After studying numerous papers related to our problem domain, we implemented satisfying algorithms for our tasks.
+* We created a user-friendly interface combined with the latest mobile camera API, CameraX (Google) for Android.
 
 etc...
 
-**Would like to achieve**
-* the application still can't take all the parameters and interpret them into an accurate answer of  
-  cancerous/noncancerous, we should find a better balance between the parameters.
-* the classification model isn't accurate enough - more computational power is required.
-* we still have a lack of Data that can use us in our problem domain - Mobile devices.
-a better way to grab data will be a cloud based platform for a much more contributors than we had.
+**Goals for Improvement**:
+* Enhance the application's ability to accurately interpret all parameters and provide an accurate determination of cancerous/noncancerous lesions. Finding a better balance between the parameters is necessary.
+* Improve the accuracy of the classification model by acquiring more computational power.
+* Address the lack of data specifically applicable to our problem domain, which involves mobile devices. A cloud-based platform would be ideal for gathering data from a larger number of contributors.
 
+**This project has been an exciting challenge, and we have achieved many of our sub-goals while learning a great deal along the way :)**
 
-**it was a great challenge. we succeed many of our sub-goals and learned many things through this project :)**
-
-**We Encourage you to take a look on the mentioned submodules**
+**We encourage you to explore the mentioned submodules for more information.**
